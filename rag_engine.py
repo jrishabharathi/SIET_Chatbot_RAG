@@ -41,7 +41,7 @@ def load_base (pdf_path= "01_College_Information.pdf"):
   return index, embed_model, chunks
 
 #retrive
-def retrieve_content (question, embed_model, chunks, index, num_chunks=3)
+def retrieve_content (question, embed_model, chunks, index, num_chunks=3):
   if not question.strip():
     raise ValueError("Question canniot be blank")
   if num_chunks < 1:
@@ -61,7 +61,7 @@ def ask_rag (question, embed_modul, chunks, index, api_key, num_chunks=3, model_
   key = api_key
   if not key:
     raise ValueError("API key Missing")
-  background = retrieve_content(question, embed_model, chunks, index, num_chunks=3):
+  background = retrieve_content(question, embed_model, chunks, index, num_chunks=3)
   prompt = """ you are an professional ai assistant.
   answer userr question using only document backgrojfn below .
   do nint inbvet or assume facts.
