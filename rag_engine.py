@@ -29,7 +29,7 @@ def build_vectors (chunks, model_name = "all-MiniLM-L6-v2"):
     raise ValueError("Cannot apply embedding without chunks")
   embed_model = SentenceTransformer(model_name)
   embed_vectors = embed_model.encode(chunks, convert_to_numpy = True )
-  faiss.normalize_L2(embed_venctors)
+  faiss.normalize_L2(embed_vectors)
   index = faiss.IndexFlatIP(embed_vectors.shape[1])
   index.add(embed_vectors)
   return index, embed_model
